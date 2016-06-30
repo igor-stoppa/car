@@ -1,0 +1,1797 @@
+<?xml version='1.0' encoding='utf-8'?>
+<interface>
+  <object class="tk.Toplevel" id="Toplevel">
+    <property name="height">500</property>
+    <property name="resizable">both</property>
+    <property name="width">500</property>
+    <child>
+      <object class="ttk.Frame" id="MainFrame">
+        <property name="height">200</property>
+        <property name="width">200</property>
+        <layout>
+          <property name="column">0</property>
+          <property name="columnspan">600</property>
+          <property name="ipadx">10</property>
+          <property name="ipady">10</property>
+          <property name="padx">10</property>
+          <property name="pady">10</property>
+          <property name="propagate">True</property>
+          <property name="row">0</property>
+          <property name="rowspan">1000</property>
+          <property name="sticky">nsew</property>
+        </layout>
+        <child>
+          <object class="ttk.Labelframe" id="BusPiratePortLabelframe">
+            <property name="height">200</property>
+            <property name="text" translatable="yes">Bus Pirate Port</property>
+            <property name="width">200</property>
+            <layout>
+              <property name="column">0</property>
+              <property name="columnspan">250</property>
+              <property name="ipadx">10</property>
+              <property name="padx">10</property>
+              <property name="propagate">True</property>
+              <property name="row">0</property>
+              <property name="rowspan">2</property>
+              <property name="sticky">nsew</property>
+            </layout>
+            <child>
+              <object class="ttk.Entry" id="PathSerialPortEntry">
+                <property name="text" translatable="yes">/dev/ttyACM0</property>
+                <layout>
+                  <property name="column">0</property>
+                  <property name="padx">10</property>
+                  <property name="pady">15</property>
+                  <property name="propagate">True</property>
+                  <property name="row">0</property>
+                  <property name="rowspan">1</property>
+                  <property name="sticky">nsew</property>
+                </layout>
+              </object>
+            </child>
+            <child>
+              <object class="ttk.Button" id="BusPirateEnterI2CModeButton">
+                <property name="command">on_BusPirateEnterI2CModeButton_clicked</property>
+                <property name="text" translatable="yes">Enter I2C Mode</property>
+                <layout>
+                  <property name="column">2</property>
+                  <property name="ipadx">5</property>
+                  <property name="padx">10</property>
+                  <property name="pady">15</property>
+                  <property name="propagate">True</property>
+                  <property name="row">0</property>
+                  <property name="sticky">nsew</property>
+                </layout>
+              </object>
+            </child>
+          </object>
+        </child>
+        <child>
+          <object class="ttk.Labelframe" id="I2CLabelframe">
+            <property name="height">200</property>
+            <property name="text" translatable="yes">I2C</property>
+            <property name="width">200</property>
+            <layout>
+              <property name="column">0</property>
+              <property name="columnspan">250</property>
+              <property name="ipadx">5</property>
+              <property name="padx">10</property>
+              <property name="pady">10</property>
+              <property name="propagate">True</property>
+              <property name="row">2</property>
+              <property name="rowspan">65</property>
+              <property name="sticky">nsew</property>
+            </layout>
+            <child>
+              <object class="ttk.Frame" id="I2CCommandsFrame">
+                <property name="height">200</property>
+                <property name="width">200</property>
+                <layout>
+                  <property name="column">0</property>
+                  <property name="columnspan">120</property>
+                  <property name="ipadx">10</property>
+                  <property name="propagate">True</property>
+                  <property name="row">0</property>
+                  <property name="rowspan">60</property>
+                  <property name="sticky">nsew</property>
+                </layout>
+                <child>
+                  <object class="ttk.Notebook" id="I2CCommandsNotebook">
+                    <property name="height">540</property>
+                    <property name="width">430</property>
+                    <layout>
+                      <property name="column">0</property>
+                      <property name="columnspan">110</property>
+                      <property name="propagate">True</property>
+                      <property name="row">1</property>
+                      <property name="rowspan">65</property>
+                      <property name="sticky">nsew</property>
+                    </layout>
+                    <child>
+                      <object class="ttk.Notebook.Tab" id="I2CMotorsTab">
+                        <property name="sticky">nsew</property>
+                        <property name="text" translatable="yes">Motors</property>
+                        <child>
+                          <object class="tk.Frame" id="MotorsFrame">
+                            <property name="height">340</property>
+                            <property name="width">450</property>
+                            <layout>
+                              <property name="column">0</property>
+                              <property name="columnspan">150</property>
+                              <property name="propagate">True</property>
+                              <property name="row">0</property>
+                              <property name="rowspan">50</property>
+                              <property name="sticky">nsew</property>
+                              <rows>
+                                <row id="0">
+                                  <property name="pad">0</property>
+                                  <property name="weight">0</property>
+                                </row>
+                              </rows>
+                            </layout>
+                            <child>
+                              <object class="ttk.Notebook" id="MotorsNotebook">
+                                <property name="height">450</property>
+                                <property name="width">450</property>
+                                <layout>
+                                  <property name="column">0</property>
+                                  <property name="propagate">True</property>
+                                  <property name="row">0</property>
+                                </layout>
+                                <child>
+                                  <object class="ttk.Notebook.Tab" id="I2CTachoMotorsTab">
+                                    <property name="text" translatable="yes">Tacho</property>
+                                    <child>
+                                      <object class="ttk.Frame" id="TachoMotorsFrame">
+                                        <property name="height">200</property>
+                                        <property name="width">450</property>
+                                        <layout>
+                                          <property name="column">0</property>
+                                          <property name="propagate">True</property>
+                                          <property name="row">0</property>
+                                          <property name="sticky">nsew</property>
+                                        </layout>
+                                        <child>
+                                          <object class="ttk.Button" id="TachoCalibrateButton">
+                                            <property name="command">on_I2CTachoCalibrateButton_clicked</property>
+                                            <property name="text" translatable="yes">Calibrate</property>
+                                            <layout>
+                                              <property name="column">0</property>
+                                              <property name="propagate">True</property>
+                                              <property name="row">0</property>
+                                            </layout>
+                                          </object>
+                                        </child>
+                                        <child>
+                                          <object class="tk.Frame" id="ValuesTachoMotorsFrame">
+                                            <property name="height">200</property>
+                                            <property name="width">260</property>
+                                            <layout>
+                                              <property name="column">0</property>
+                                              <property name="pady">5</property>
+                                              <property name="propagate">True</property>
+                                              <property name="row">3</property>
+                                              <property name="sticky">nsew</property>
+                                            </layout>
+                                            <child>
+                                              <object class="tk.Label" id="TachoMotorIndexLabel">
+                                                <property name="text" translatable="yes">Motor</property>
+                                                <layout>
+                                                  <property name="column">0</property>
+                                                  <property name="propagate">True</property>
+                                                  <property name="row">0</property>
+                                                </layout>
+                                              </object>
+                                            </child>
+                                            <child>
+                                              <object class="tk.Label" id="TachoMotorCalibPeriodLabel">
+                                                <property name="text" translatable="yes">Calib Period</property>
+                                                <layout>
+                                                  <property name="column">0</property>
+                                                  <property name="propagate">True</property>
+                                                  <property name="row">1</property>
+                                                </layout>
+                                              </object>
+                                            </child>
+                                            <child>
+                                              <object class="tk.Label" id="TachoMotorAvgPeriodLabel">
+                                                <property name="text" translatable="yes">Avg Period</property>
+                                                <layout>
+                                                  <property name="column">0</property>
+                                                  <property name="propagate">True</property>
+                                                  <property name="row">2</property>
+                                                </layout>
+                                              </object>
+                                            </child>
+                                            <child>
+                                              <object class="tk.Label" id="TachoMotorCountLabel">
+                                                <property name="text" translatable="yes">Count</property>
+                                                <layout>
+                                                  <property name="column">0</property>
+                                                  <property name="propagate">True</property>
+                                                  <property name="row">3</property>
+                                                </layout>
+                                              </object>
+                                            </child>
+                                            <child>
+                                              <object class="tk.Label" id="TachoMotorMLabel">
+                                                <property name="text" translatable="yes">m</property>
+                                                <layout>
+                                                  <property name="column">0</property>
+                                                  <property name="propagate">True</property>
+                                                  <property name="row">4</property>
+                                                </layout>
+                                              </object>
+                                            </child>
+                                            <child>
+                                              <object class="tk.Label" id="TachoMotorQLabel">
+                                                <property name="text" translatable="yes">q</property>
+                                                <layout>
+                                                  <property name="column">0</property>
+                                                  <property name="propagate">True</property>
+                                                  <property name="row">5</property>
+                                                </layout>
+                                              </object>
+                                            </child>
+                                            <child>
+                                              <object class="tk.Label" id="LeftFrontTachoMotorIndexLabel">
+                                                <property name="text" translatable="yes">Left Front</property>
+                                                <layout>
+                                                  <property name="column">1</property>
+                                                  <property name="padx">5</property>
+                                                  <property name="pady">5</property>
+                                                  <property name="propagate">True</property>
+                                                  <property name="row">0</property>
+                                                </layout>
+                                              </object>
+                                            </child>
+                                            <child>
+                                              <object class="tk.Label" id="LeftFrontTachoMotorCalibPeriodLabel">
+                                                <property name="text" translatable="yes">calib period</property>
+                                                <property name="textvariable">string:LeftFrontTachoMotorCalibPeriodInput</property>
+                                                <layout>
+                                                  <property name="column">1</property>
+                                                  <property name="padx">5</property>
+                                                  <property name="pady">5</property>
+                                                  <property name="propagate">True</property>
+                                                  <property name="row">1</property>
+                                                </layout>
+                                              </object>
+                                            </child>
+                                            <child>
+                                              <object class="tk.Label" id="LeftFrontTachoMotorAvgPeriodLabel">
+                                                <property name="text" translatable="yes">avg period</property>
+                                                <property name="textvariable">string:LeftFrontTachoMotorAvgPeriodInput</property>
+                                                <layout>
+                                                  <property name="column">1</property>
+                                                  <property name="padx">5</property>
+                                                  <property name="pady">5</property>
+                                                  <property name="propagate">True</property>
+                                                  <property name="row">2</property>
+                                                </layout>
+                                              </object>
+                                            </child>
+                                            <child>
+                                              <object class="tk.Label" id="LeftFrontTachoMotorCountLabel">
+                                                <property name="text" translatable="yes">count</property>
+                                                <property name="textvariable">string:LeftFrontTachoMotorCountInput</property>
+                                                <layout>
+                                                  <property name="column">1</property>
+                                                  <property name="padx">5</property>
+                                                  <property name="pady">5</property>
+                                                  <property name="propagate">True</property>
+                                                  <property name="row">3</property>
+                                                </layout>
+                                              </object>
+                                            </child>
+                                            <child>
+                                              <object class="tk.Label" id="LeftFrontTachoMotorMLabel">
+                                                <property name="text" translatable="yes">m</property>
+                                                <property name="textvariable">string:LeftFrontTachoMotorMInput</property>
+                                                <layout>
+                                                  <property name="column">1</property>
+                                                  <property name="padx">5</property>
+                                                  <property name="pady">5</property>
+                                                  <property name="propagate">True</property>
+                                                  <property name="row">4</property>
+                                                </layout>
+                                              </object>
+                                            </child>
+                                            <child>
+                                              <object class="tk.Label" id="LeftFrontTachoMotorQLabel">
+                                                <property name="text" translatable="yes">q</property>
+                                                <property name="textvariable">string:LeftFrontTachoMotorQInput</property>
+                                                <layout>
+                                                  <property name="column">1</property>
+                                                  <property name="propagate">True</property>
+                                                  <property name="row">5</property>
+                                                </layout>
+                                              </object>
+                                            </child>
+                                            <child>
+                                              <object class="tk.Label" id="LeftRearTachoMotorIndexLabel">
+                                                <property name="text" translatable="yes">Left Rear</property>
+                                                <layout>
+                                                  <property name="column">2</property>
+                                                  <property name="padx">5</property>
+                                                  <property name="pady">5</property>
+                                                  <property name="propagate">True</property>
+                                                  <property name="row">0</property>
+                                                </layout>
+                                              </object>
+                                            </child>
+                                            <child>
+                                              <object class="tk.Label" id="LeftRearTachoMotorCalibPeriodLabel">
+                                                <property name="text" translatable="yes">calib period</property>
+                                                <property name="textvariable">string:LeftRearTachoMotorCalibPeriodInput</property>
+                                                <layout>
+                                                  <property name="column">2</property>
+                                                  <property name="padx">5</property>
+                                                  <property name="pady">5</property>
+                                                  <property name="propagate">True</property>
+                                                  <property name="row">1</property>
+                                                </layout>
+                                              </object>
+                                            </child>
+                                            <child>
+                                              <object class="tk.Label" id="LeftRearTachoMotorAvgPeriodLabel">
+                                                <property name="text" translatable="yes">avg period</property>
+                                                <property name="textvariable">string:LeftRearTachoMotorAvgPeriodInput</property>
+                                                <layout>
+                                                  <property name="column">2</property>
+                                                  <property name="padx">5</property>
+                                                  <property name="pady">5</property>
+                                                  <property name="propagate">True</property>
+                                                  <property name="row">2</property>
+                                                </layout>
+                                              </object>
+                                            </child>
+                                            <child>
+                                              <object class="tk.Label" id="LeftRearTachoMotorCountLabel">
+                                                <property name="text" translatable="yes">count</property>
+                                                <property name="textvariable">string:LeftRearTachoMotorCountInput</property>
+                                                <layout>
+                                                  <property name="column">2</property>
+                                                  <property name="padx">5</property>
+                                                  <property name="pady">5</property>
+                                                  <property name="propagate">True</property>
+                                                  <property name="row">3</property>
+                                                </layout>
+                                              </object>
+                                            </child>
+                                            <child>
+                                              <object class="tk.Label" id="LeftRearTachoMotorMLabel">
+                                                <property name="text" translatable="yes">m</property>
+                                                <property name="textvariable">string:LeftRearTachoMotorMInput</property>
+                                                <layout>
+                                                  <property name="column">2</property>
+                                                  <property name="padx">5</property>
+                                                  <property name="pady">5</property>
+                                                  <property name="propagate">True</property>
+                                                  <property name="row">4</property>
+                                                </layout>
+                                              </object>
+                                            </child>
+                                            <child>
+                                              <object class="tk.Label" id="LeftRearTachoMotorQLabel">
+                                                <property name="text" translatable="yes">q</property>
+                                                <property name="textvariable">string:LeftRearTachoMotorQInput</property>
+                                                <layout>
+                                                  <property name="column">2</property>
+                                                  <property name="propagate">True</property>
+                                                  <property name="row">5</property>
+                                                </layout>
+                                              </object>
+                                            </child>
+                                            <child>
+                                              <object class="tk.Label" id="RightFrontTachoMotorIndexLabel">
+                                                <property name="text" translatable="yes">Right Front</property>
+                                                <layout>
+                                                  <property name="column">3</property>
+                                                  <property name="propagate">True</property>
+                                                  <property name="row">0</property>
+                                                </layout>
+                                              </object>
+                                            </child>
+                                            <child>
+                                              <object class="tk.Label" id="RightFrontTachoMotorCalibPeriodLabel">
+                                                <property name="text" translatable="yes">calib period</property>
+                                                <property name="textvariable">string:RightFrontTachoMotorCalibPeriodInput</property>
+                                                <layout>
+                                                  <property name="column">3</property>
+                                                  <property name="padx">5</property>
+                                                  <property name="pady">5</property>
+                                                  <property name="propagate">True</property>
+                                                  <property name="row">1</property>
+                                                </layout>
+                                              </object>
+                                            </child>
+                                            <child>
+                                              <object class="tk.Label" id="RightFrontTachoMotorAvgPeriodLabel">
+                                                <property name="text" translatable="yes">avg period</property>
+                                                <property name="textvariable">string:RightFrontTachoMotorAvgPeriodInput</property>
+                                                <layout>
+                                                  <property name="column">3</property>
+                                                  <property name="padx">5</property>
+                                                  <property name="pady">5</property>
+                                                  <property name="propagate">True</property>
+                                                  <property name="row">2</property>
+                                                </layout>
+                                              </object>
+                                            </child>
+                                            <child>
+                                              <object class="tk.Label" id="RightFrontTachoMotorCountLabel">
+                                                <property name="text" translatable="yes">count</property>
+                                                <property name="textvariable">string:RightFrontTachoMotorCountInput</property>
+                                                <layout>
+                                                  <property name="column">3</property>
+                                                  <property name="padx">5</property>
+                                                  <property name="pady">5</property>
+                                                  <property name="propagate">True</property>
+                                                  <property name="row">3</property>
+                                                </layout>
+                                              </object>
+                                            </child>
+                                            <child>
+                                              <object class="tk.Label" id="RightFrontTachoMotorMLabel">
+                                                <property name="text" translatable="yes">m</property>
+                                                <property name="textvariable">string:RightFrontTachoMotorMInput</property>
+                                                <layout>
+                                                  <property name="column">3</property>
+                                                  <property name="padx">5</property>
+                                                  <property name="pady">5</property>
+                                                  <property name="propagate">True</property>
+                                                  <property name="row">4</property>
+                                                </layout>
+                                              </object>
+                                            </child>
+                                            <child>
+                                              <object class="tk.Label" id="RightFrontTachoMotorQLabel">
+                                                <property name="text" translatable="yes">q</property>
+                                                <property name="textvariable">string:RightFrontTachoMotorQInput</property>
+                                                <layout>
+                                                  <property name="column">3</property>
+                                                  <property name="propagate">True</property>
+                                                  <property name="row">5</property>
+                                                </layout>
+                                              </object>
+                                            </child>
+                                            <child>
+                                              <object class="tk.Label" id="RightRearTachoMotorIndexLabel">
+                                                <property name="text" translatable="yes">Right Rear</property>
+                                                <layout>
+                                                  <property name="column">4</property>
+                                                  <property name="padx">5</property>
+                                                  <property name="pady">5</property>
+                                                  <property name="propagate">True</property>
+                                                  <property name="row">0</property>
+                                                </layout>
+                                              </object>
+                                            </child>
+                                            <child>
+                                              <object class="tk.Label" id="RightRearTachoMotorCalibPeriodLabel_">
+                                                <property name="text" translatable="yes">calib period</property>
+                                                <property name="textvariable">string:RightRearTachoMotorCalibPeriodInput</property>
+                                                <layout>
+                                                  <property name="column">4</property>
+                                                  <property name="padx">5</property>
+                                                  <property name="pady">5</property>
+                                                  <property name="propagate">True</property>
+                                                  <property name="row">1</property>
+                                                </layout>
+                                              </object>
+                                            </child>
+                                            <child>
+                                              <object class="tk.Label" id="RightRearTachoMotorAvgPeriodLabel">
+                                                <property name="text" translatable="yes">avg period</property>
+                                                <property name="textvariable">string:RightRearTachoMotorAvgPeriodInput</property>
+                                                <layout>
+                                                  <property name="column">4</property>
+                                                  <property name="padx">5</property>
+                                                  <property name="pady">5</property>
+                                                  <property name="propagate">True</property>
+                                                  <property name="row">2</property>
+                                                </layout>
+                                              </object>
+                                            </child>
+                                            <child>
+                                              <object class="tk.Label" id="RightRearTachoMotorCountLabel">
+                                                <property name="text" translatable="yes">count</property>
+                                                <property name="textvariable">string:RightRearTachoMotorCountInput</property>
+                                                <layout>
+                                                  <property name="column">4</property>
+                                                  <property name="padx">5</property>
+                                                  <property name="pady">5</property>
+                                                  <property name="propagate">True</property>
+                                                  <property name="row">3</property>
+                                                </layout>
+                                              </object>
+                                            </child>
+                                            <child>
+                                              <object class="tk.Label" id="RightRearTachoMotorMLabel">
+                                                <property name="text" translatable="yes">m</property>
+                                                <property name="textvariable">string:RightRearTachoMotorMInput</property>
+                                                <layout>
+                                                  <property name="column">4</property>
+                                                  <property name="padx">5</property>
+                                                  <property name="pady">5</property>
+                                                  <property name="propagate">True</property>
+                                                  <property name="row">4</property>
+                                                </layout>
+                                              </object>
+                                            </child>
+                                            <child>
+                                              <object class="tk.Label" id="RightRearTachoMotorQLabel">
+                                                <property name="text" translatable="yes">q</property>
+                                                <property name="textvariable">string:RightRearTachoMotorQInput</property>
+                                                <layout>
+                                                  <property name="column">4</property>
+                                                  <property name="propagate">True</property>
+                                                  <property name="row">5</property>
+                                                </layout>
+                                              </object>
+                                            </child>
+                                          </object>
+                                        </child>
+                                      </object>
+                                    </child>
+                                  </object>
+                                </child>
+                                <child>
+                                  <object class="ttk.Notebook.Tab" id="I2CRawMotorsTab">
+                                    <property name="sticky">nsew</property>
+                                    <property name="text" translatable="yes">Raw Motors</property>
+                                    <child>
+                                      <object class="tk.Frame" id="I2CRawMotorsControlsFrame">
+                                        <property name="height">485</property>
+                                        <property name="width">350</property>
+                                        <layout>
+                                          <property name="column">0</property>
+                                          <property name="propagate">True</property>
+                                          <property name="row">0</property>
+                                          <property name="sticky">nsew</property>
+                                        </layout>
+                                        <child>
+                                          <object class="tk.Frame" id="AllRawMotorsFrame">
+                                            <property name="height">200</property>
+                                            <property name="width">200</property>
+                                            <layout>
+                                              <property name="column">0</property>
+                                              <property name="pady">5</property>
+                                              <property name="propagate">True</property>
+                                              <property name="row">0</property>
+                                            </layout>
+                                            <child>
+                                              <object class="tk.Label" id="AllRawMotorsLabel">
+                                                <property name="text" translatable="yes">All Motors</property>
+                                                <layout>
+                                                  <property name="column">0</property>
+                                                  <property name="columnspan">2</property>
+                                                  <property name="propagate">True</property>
+                                                  <property name="row">0</property>
+                                                  <property name="rowspan">1</property>
+                                                  <property name="sticky">new</property>
+                                                </layout>
+                                              </object>
+                                            </child>
+                                            <child>
+                                              <object class="tk.Radiobutton" id="AllRawMotorsRadiobutton">
+                                                <property name="command">on_I2CAllMotorsRadiobutton_clicked</property>
+                                                <property name="font">TkCaptionFont</property>
+                                                <property name="value">AllRawMotors</property>
+                                                <property name="variable">string:RawMotorsSelection</property>
+                                                <layout>
+                                                  <property name="column">0</property>
+                                                  <property name="propagate">True</property>
+                                                  <property name="row">1</property>
+                                                  <property name="rowspan">1</property>
+                                                  <property name="sticky">w</property>
+                                                </layout>
+                                              </object>
+                                            </child>
+                                            <child>
+                                              <object class="tk.Frame" id="AllRawMotorsInnerFrame">
+                                                <property name="height">120</property>
+                                                <property name="width">350</property>
+                                                <layout>
+                                                  <property name="column">1</property>
+                                                  <property name="pady">5</property>
+                                                  <property name="propagate">True</property>
+                                                  <property name="row">1</property>
+                                                  <property name="sticky">w</property>
+                                                </layout>
+                                                <child>
+                                                  <object class="tk.Label" id="AllRawMotorsLabel_1">
+                                                    <property name="text" translatable="yes">All</property>
+                                                    <property name="width">10</property>
+                                                    <layout>
+                                                      <property name="column">0</property>
+                                                      <property name="propagate">True</property>
+                                                      <property name="row">0</property>
+                                                      <property name="sticky">w</property>
+                                                    </layout>
+                                                  </object>
+                                                </child>
+                                                <child>
+                                                  <object class="ttk.Combobox" id="AllRawMotorsCombobox">
+                                                    <property name="state">readonly</property>
+                                                    <property name="textvariable">string:AllRawMotorsStatusOutput</property>
+                                                    <property name="values">"idle" "forward" "backward" "locked"</property>
+                                                    <property name="width">15</property>
+                                                    <layout>
+                                                      <property name="column">1</property>
+                                                      <property name="propagate">True</property>
+                                                      <property name="row">0</property>
+                                                    </layout>
+                                                  </object>
+                                                </child>
+                                                <child>
+                                                  <object class="tk.Spinbox" id="AllRawMotorsSpinbox">
+                                                    <property name="from_">0</property>
+                                                    <property name="increment">1</property>
+                                                    <property name="insertofftime">0</property>
+                                                    <property name="insertontime">0</property>
+                                                    <property name="insertwidth">2</property>
+                                                    <property name="state">normal</property>
+                                                    <property name="textvariable">int:AllRawMotorsPWMOutput</property>
+                                                    <property name="to">255</property>
+                                                    <property name="width">9</property>
+                                                    <layout>
+                                                      <property name="column">2</property>
+                                                      <property name="propagate">True</property>
+                                                      <property name="row">0</property>
+                                                      <property name="sticky">e</property>
+                                                    </layout>
+                                                  </object>
+                                                </child>
+                                              </object>
+                                            </child>
+                                          </object>
+                                        </child>
+                                        <child>
+                                          <object class="tk.Frame" id="SidesRawMotorsFrame">
+                                            <property name="height">200</property>
+                                            <property name="width">200</property>
+                                            <layout>
+                                              <property name="column">0</property>
+                                              <property name="pady">5</property>
+                                              <property name="propagate">True</property>
+                                              <property name="row">1</property>
+                                            </layout>
+                                            <child>
+                                              <object class="tk.Label" id="SidesRawMotorsLabel">
+                                                <property name="text" translatable="yes">Sides Motors</property>
+                                                <layout>
+                                                  <property name="column">0</property>
+                                                  <property name="columnspan">2</property>
+                                                  <property name="propagate">True</property>
+                                                  <property name="row">0</property>
+                                                  <property name="rowspan">1</property>
+                                                  <property name="sticky">new</property>
+                                                </layout>
+                                              </object>
+                                            </child>
+                                            <child>
+                                              <object class="tk.Radiobutton" id="SidesRawMotorsRadiobutton">
+                                                <property name="command">on_I2CSidesMotorsRadiobutton_clicked</property>
+                                                <property name="value">SidesRawMotors</property>
+                                                <property name="variable">string:RawMotorsSelection</property>
+                                                <layout>
+                                                  <property name="column">0</property>
+                                                  <property name="propagate">True</property>
+                                                  <property name="row">1</property>
+                                                  <property name="rowspan">2</property>
+                                                  <property name="sticky">w</property>
+                                                </layout>
+                                              </object>
+                                            </child>
+                                            <child>
+                                              <object class="tk.Frame" id="SidesRawMotorsInnerFrame">
+                                                <property name="height">200</property>
+                                                <property name="padx">0</property>
+                                                <property name="pady">3</property>
+                                                <property name="width">200</property>
+                                                <layout>
+                                                  <property name="column">1</property>
+                                                  <property name="propagate">True</property>
+                                                  <property name="row">1</property>
+                                                </layout>
+                                                <child>
+                                                  <object class="tk.Frame" id="LeftSideRawMotorsFrame">
+                                                    <property name="height">120</property>
+                                                    <property name="width">350</property>
+                                                    <layout>
+                                                      <property name="column">1</property>
+                                                      <property name="pady">5</property>
+                                                      <property name="propagate">True</property>
+                                                      <property name="row">1</property>
+                                                      <property name="sticky">w</property>
+                                                    </layout>
+                                                    <child>
+                                                      <object class="tk.Label" id="LeftSideRawMotorsLabel">
+                                                        <property name="text" translatable="yes">Left Side</property>
+                                                        <property name="width">10</property>
+                                                        <layout>
+                                                          <property name="column">0</property>
+                                                          <property name="propagate">True</property>
+                                                          <property name="row">0</property>
+                                                          <property name="sticky">w</property>
+                                                        </layout>
+                                                      </object>
+                                                    </child>
+                                                    <child>
+                                                      <object class="ttk.Combobox" id="LeftSideRawMotorsCombobox">
+                                                        <property name="state">readonly</property>
+                                                        <property name="textvariable">string:LeftSideRawMotorsStatusOutput</property>
+                                                        <property name="values">"idle" "forward" "backward" "locked"</property>
+                                                        <property name="width">15</property>
+                                                        <layout>
+                                                          <property name="column">1</property>
+                                                          <property name="propagate">True</property>
+                                                          <property name="row">0</property>
+                                                        </layout>
+                                                      </object>
+                                                    </child>
+                                                    <child>
+                                                      <object class="tk.Spinbox" id="LeftSideRawMotorsSpinbox">
+                                                        <property name="from_">0</property>
+                                                        <property name="increment">1</property>
+                                                        <property name="insertofftime">0</property>
+                                                        <property name="textvariable">int:LeftSideRawMotorsPWMOutput</property>
+                                                        <property name="to">255</property>
+                                                        <property name="width">9</property>
+                                                        <layout>
+                                                          <property name="column">2</property>
+                                                          <property name="propagate">True</property>
+                                                          <property name="row">0</property>
+                                                          <property name="sticky">e</property>
+                                                        </layout>
+                                                      </object>
+                                                    </child>
+                                                  </object>
+                                                </child>
+                                                <child>
+                                                  <object class="tk.Frame" id="RightSideRawMotorsFrame">
+                                                    <property name="height">120</property>
+                                                    <property name="width">350</property>
+                                                    <layout>
+                                                      <property name="column">1</property>
+                                                      <property name="pady">5</property>
+                                                      <property name="propagate">True</property>
+                                                      <property name="row">2</property>
+                                                      <property name="sticky">w</property>
+                                                    </layout>
+                                                    <child>
+                                                      <object class="tk.Label" id="RightSideRawMotorsLabel">
+                                                        <property name="text" translatable="yes">Right Side</property>
+                                                        <property name="width">10</property>
+                                                        <layout>
+                                                          <property name="column">0</property>
+                                                          <property name="propagate">True</property>
+                                                          <property name="row">0</property>
+                                                          <property name="sticky">nw</property>
+                                                        </layout>
+                                                      </object>
+                                                    </child>
+                                                    <child>
+                                                      <object class="ttk.Combobox" id="RightSideRawMotorsCombobox">
+                                                        <property name="state">readonly</property>
+                                                        <property name="textvariable">string:RightSideRawMotorsStatusOutput</property>
+                                                        <property name="values">"idle" "forward" "backward" "locked"</property>
+                                                        <property name="width">15</property>
+                                                        <layout>
+                                                          <property name="column">1</property>
+                                                          <property name="propagate">True</property>
+                                                          <property name="row">0</property>
+                                                        </layout>
+                                                      </object>
+                                                    </child>
+                                                    <child>
+                                                      <object class="tk.Spinbox" id="RightSideRawMotorsSpinbox">
+                                                        <property name="from_">0</property>
+                                                        <property name="increment">1</property>
+                                                        <property name="insertofftime">0</property>
+                                                        <property name="textvariable">int:RightSideRawMotorsPWMOutput</property>
+                                                        <property name="to">255</property>
+                                                        <property name="width">9</property>
+                                                        <layout>
+                                                          <property name="column">2</property>
+                                                          <property name="propagate">True</property>
+                                                          <property name="row">0</property>
+                                                          <property name="sticky">e</property>
+                                                        </layout>
+                                                      </object>
+                                                    </child>
+                                                  </object>
+                                                </child>
+                                              </object>
+                                            </child>
+                                          </object>
+                                        </child>
+                                        <child>
+                                          <object class="tk.Frame" id="IndividualRawMotorsFrame">
+                                            <property name="height">200</property>
+                                            <property name="width">200</property>
+                                            <layout>
+                                              <property name="column">0</property>
+                                              <property name="pady">5</property>
+                                              <property name="propagate">True</property>
+                                              <property name="row">2</property>
+                                              <property name="sticky">new</property>
+                                            </layout>
+                                            <child>
+                                              <object class="tk.Label" id="IndividualRawMotorsLabel">
+                                                <property name="text" translatable="yes">Individual Motors</property>
+                                                <layout>
+                                                  <property name="column">0</property>
+                                                  <property name="columnspan">2</property>
+                                                  <property name="propagate">True</property>
+                                                  <property name="row">0</property>
+                                                  <property name="sticky">new</property>
+                                                </layout>
+                                              </object>
+                                            </child>
+                                            <child>
+                                              <object class="tk.Radiobutton" id="IndividualRawMotorsRadiobutton">
+                                                <property name="command">on_I2CIndividualMotorsRadiobutton_clicked</property>
+                                                <property name="value">IndividualRawMotors</property>
+                                                <property name="variable">string:RawMotorsSelection</property>
+                                                <layout>
+                                                  <property name="column">0</property>
+                                                  <property name="propagate">True</property>
+                                                  <property name="row">1</property>
+                                                  <property name="rowspan">4</property>
+                                                  <property name="sticky">nsw</property>
+                                                </layout>
+                                              </object>
+                                            </child>
+                                            <child>
+                                              <object class="tk.Frame" id="IndividualRawMotorsInnerFrame">
+                                                <property name="height">200</property>
+                                                <property name="width">200</property>
+                                                <layout>
+                                                  <property name="column">1</property>
+                                                  <property name="propagate">True</property>
+                                                  <property name="row">1</property>
+                                                </layout>
+                                                <child>
+                                                  <object class="tk.Frame" id="LFRawMotorFrame">
+                                                    <property name="height">120</property>
+                                                    <property name="width">350</property>
+                                                    <layout>
+                                                      <property name="column">1</property>
+                                                      <property name="pady">5</property>
+                                                      <property name="propagate">True</property>
+                                                      <property name="row">1</property>
+                                                      <property name="sticky">w</property>
+                                                    </layout>
+                                                    <child>
+                                                      <object class="tk.Label" id="LFRawMotorLabel">
+                                                        <property name="text" translatable="yes">Left Front</property>
+                                                        <property name="width">10</property>
+                                                        <layout>
+                                                          <property name="column">0</property>
+                                                          <property name="propagate">True</property>
+                                                          <property name="row">0</property>
+                                                          <property name="sticky">nw</property>
+                                                        </layout>
+                                                      </object>
+                                                    </child>
+                                                    <child>
+                                                      <object class="ttk.Combobox" id="LFRawMotorCombobox">
+                                                        <property name="state">readonly</property>
+                                                        <property name="textvariable">string:LeftFrontRawMotorStatusOutput</property>
+                                                        <property name="values">"idle" "forward" "backward" "locked"</property>
+                                                        <property name="width">15</property>
+                                                        <layout>
+                                                          <property name="column">1</property>
+                                                          <property name="propagate">True</property>
+                                                          <property name="row">0</property>
+                                                        </layout>
+                                                      </object>
+                                                    </child>
+                                                    <child>
+                                                      <object class="tk.Spinbox" id="LFRawMotorSpinbox">
+                                                        <property name="from_">0</property>
+                                                        <property name="increment">1</property>
+                                                        <property name="insertofftime">0</property>
+                                                        <property name="textvariable">int:LeftFrontRawMotorPWMOutput</property>
+                                                        <property name="to">255</property>
+                                                        <property name="width">9</property>
+                                                        <layout>
+                                                          <property name="column">2</property>
+                                                          <property name="propagate">True</property>
+                                                          <property name="row">0</property>
+                                                          <property name="sticky">e</property>
+                                                        </layout>
+                                                      </object>
+                                                    </child>
+                                                  </object>
+                                                </child>
+                                                <child>
+                                                  <object class="tk.Frame" id="RFRawMotorFrame">
+                                                    <property name="height">120</property>
+                                                    <property name="width">350</property>
+                                                    <layout>
+                                                      <property name="column">1</property>
+                                                      <property name="pady">5</property>
+                                                      <property name="propagate">True</property>
+                                                      <property name="row">2</property>
+                                                      <property name="sticky">w</property>
+                                                    </layout>
+                                                    <child>
+                                                      <object class="tk.Label" id="RFRawMotorLabel">
+                                                        <property name="text" translatable="yes">Right Front</property>
+                                                        <property name="width">10</property>
+                                                        <layout>
+                                                          <property name="column">0</property>
+                                                          <property name="propagate">True</property>
+                                                          <property name="row">0</property>
+                                                          <property name="sticky">nw</property>
+                                                        </layout>
+                                                      </object>
+                                                    </child>
+                                                    <child>
+                                                      <object class="ttk.Combobox" id="RFRawMotorCombobox">
+                                                        <property name="state">readonly</property>
+                                                        <property name="textvariable">string:RightFrontRawMotorStatusOutput</property>
+                                                        <property name="values">"idle" "forward" "backward" "locked"</property>
+                                                        <property name="width">15</property>
+                                                        <layout>
+                                                          <property name="column">1</property>
+                                                          <property name="propagate">True</property>
+                                                          <property name="row">0</property>
+                                                        </layout>
+                                                      </object>
+                                                    </child>
+                                                    <child>
+                                                      <object class="tk.Spinbox" id="RFRawMotorSpinbox">
+                                                        <property name="from_">0</property>
+                                                        <property name="increment">1</property>
+                                                        <property name="insertofftime">0</property>
+                                                        <property name="textvariable">int:RightFrontRawMotorPWMOutput</property>
+                                                        <property name="to">255</property>
+                                                        <property name="width">9</property>
+                                                        <layout>
+                                                          <property name="column">2</property>
+                                                          <property name="propagate">True</property>
+                                                          <property name="row">0</property>
+                                                          <property name="sticky">e</property>
+                                                        </layout>
+                                                      </object>
+                                                    </child>
+                                                  </object>
+                                                </child>
+                                                <child>
+                                                  <object class="tk.Frame" id="LRRawMotorFrame">
+                                                    <property name="height">120</property>
+                                                    <property name="width">350</property>
+                                                    <layout>
+                                                      <property name="column">1</property>
+                                                      <property name="pady">5</property>
+                                                      <property name="propagate">True</property>
+                                                      <property name="row">3</property>
+                                                      <property name="sticky">w</property>
+                                                    </layout>
+                                                    <child>
+                                                      <object class="tk.Label" id="LRRawMotorLabel">
+                                                        <property name="text" translatable="yes">Left Rear</property>
+                                                        <property name="width">10</property>
+                                                        <layout>
+                                                          <property name="column">0</property>
+                                                          <property name="propagate">True</property>
+                                                          <property name="row">0</property>
+                                                          <property name="sticky">nw</property>
+                                                        </layout>
+                                                      </object>
+                                                    </child>
+                                                    <child>
+                                                      <object class="ttk.Combobox" id="LRRawMotorCombobox">
+                                                        <property name="state">readonly</property>
+                                                        <property name="textvariable">string:LeftRearRawMotorStatusOutput</property>
+                                                        <property name="values">"idle" "forward" "backward" "locked"</property>
+                                                        <property name="width">15</property>
+                                                        <layout>
+                                                          <property name="column">1</property>
+                                                          <property name="propagate">True</property>
+                                                          <property name="row">0</property>
+                                                        </layout>
+                                                      </object>
+                                                    </child>
+                                                    <child>
+                                                      <object class="tk.Spinbox" id="LRRawMotorSpinbox">
+                                                        <property name="from_">0</property>
+                                                        <property name="increment">1</property>
+                                                        <property name="insertofftime">0</property>
+                                                        <property name="textvariable">int:LeftRearRawMotorPWMOutput</property>
+                                                        <property name="to">255</property>
+                                                        <property name="width">9</property>
+                                                        <layout>
+                                                          <property name="column">2</property>
+                                                          <property name="propagate">True</property>
+                                                          <property name="row">0</property>
+                                                          <property name="sticky">e</property>
+                                                        </layout>
+                                                      </object>
+                                                    </child>
+                                                  </object>
+                                                </child>
+                                                <child>
+                                                  <object class="tk.Frame" id="RRRawMotorFrame">
+                                                    <property name="height">120</property>
+                                                    <property name="width">350</property>
+                                                    <layout>
+                                                      <property name="column">1</property>
+                                                      <property name="pady">5</property>
+                                                      <property name="propagate">True</property>
+                                                      <property name="row">4</property>
+                                                      <property name="sticky">w</property>
+                                                    </layout>
+                                                    <child>
+                                                      <object class="tk.Label" id="RRRawMotorLabel">
+                                                        <property name="text" translatable="yes">Right Rear</property>
+                                                        <property name="width">10</property>
+                                                        <layout>
+                                                          <property name="column">0</property>
+                                                          <property name="propagate">True</property>
+                                                          <property name="row">0</property>
+                                                          <property name="sticky">nw</property>
+                                                        </layout>
+                                                      </object>
+                                                    </child>
+                                                    <child>
+                                                      <object class="ttk.Combobox" id="RRRawMotorCombobox">
+                                                        <property name="state">readonly</property>
+                                                        <property name="textvariable">string:RightRearRawMotorStatusOutput</property>
+                                                        <property name="values">"idle" "forward" "backward" "locked"</property>
+                                                        <property name="width">15</property>
+                                                        <layout>
+                                                          <property name="column">1</property>
+                                                          <property name="propagate">True</property>
+                                                          <property name="row">0</property>
+                                                        </layout>
+                                                      </object>
+                                                    </child>
+                                                    <child>
+                                                      <object class="tk.Spinbox" id="RRRawMotorSpinbox">
+                                                        <property name="from_">0</property>
+                                                        <property name="increment">1</property>
+                                                        <property name="insertofftime">0</property>
+                                                        <property name="textvariable">int:RightRearRawMotorPWMOutput</property>
+                                                        <property name="to">255</property>
+                                                        <property name="width">9</property>
+                                                        <layout>
+                                                          <property name="column">2</property>
+                                                          <property name="propagate">True</property>
+                                                          <property name="row">0</property>
+                                                          <property name="sticky">e</property>
+                                                        </layout>
+                                                      </object>
+                                                    </child>
+                                                  </object>
+                                                </child>
+                                              </object>
+                                            </child>
+                                          </object>
+                                        </child>
+                                        <child>
+                                          <object class="tk.Frame" id="ValuesRawMotorsFrame">
+                                            <property name="height">200</property>
+                                            <property name="width">200</property>
+                                            <layout>
+                                              <property name="column">0</property>
+                                              <property name="pady">5</property>
+                                              <property name="propagate">True</property>
+                                              <property name="row">3</property>
+                                            </layout>
+                                            <child>
+                                              <object class="tk.Label" id="RawMotorIndexLabel">
+                                                <property name="text" translatable="yes">Motor</property>
+                                                <layout>
+                                                  <property name="column">0</property>
+                                                  <property name="propagate">True</property>
+                                                  <property name="row">0</property>
+                                                </layout>
+                                              </object>
+                                            </child>
+                                            <child>
+                                              <object class="tk.Label" id="RawMotorDirectionLabel">
+                                                <property name="text" translatable="yes">Direction</property>
+                                                <layout>
+                                                  <property name="column">1</property>
+                                                  <property name="propagate">True</property>
+                                                  <property name="row">0</property>
+                                                </layout>
+                                              </object>
+                                            </child>
+                                            <child>
+                                              <object class="tk.Label" id="RawMotorIntensityLabel">
+                                                <property name="text" translatable="yes">Intensity</property>
+                                                <layout>
+                                                  <property name="column">2</property>
+                                                  <property name="propagate">True</property>
+                                                  <property name="row">0</property>
+                                                </layout>
+                                              </object>
+                                            </child>
+                                            <child>
+                                              <object class="tk.Label" id="LeftFrontRawMotorIndexLabel">
+                                                <property name="text" translatable="yes">Left Front</property>
+                                                <layout>
+                                                  <property name="column">0</property>
+                                                  <property name="padx">5</property>
+                                                  <property name="pady">5</property>
+                                                  <property name="propagate">True</property>
+                                                  <property name="row">1</property>
+                                                </layout>
+                                              </object>
+                                            </child>
+                                            <child>
+                                              <object class="tk.Label" id="LeftFrontRawMotorDirectionLabel">
+                                                <property name="text" translatable="yes">direction</property>
+                                                <property name="textvariable">string:LeftFrontRawMotorDirectionInput</property>
+                                                <layout>
+                                                  <property name="column">1</property>
+                                                  <property name="padx">5</property>
+                                                  <property name="pady">5</property>
+                                                  <property name="propagate">True</property>
+                                                  <property name="row">1</property>
+                                                </layout>
+                                              </object>
+                                            </child>
+                                            <child>
+                                              <object class="tk.Label" id="LeftFrontRawMotorIntensityLabel">
+                                                <property name="text" translatable="yes">intensity</property>
+                                                <property name="textvariable">string:LeftFrontRawMotorIntensityInput</property>
+                                                <layout>
+                                                  <property name="column">2</property>
+                                                  <property name="padx">5</property>
+                                                  <property name="pady">5</property>
+                                                  <property name="propagate">True</property>
+                                                  <property name="row">1</property>
+                                                </layout>
+                                              </object>
+                                            </child>
+                                            <child>
+                                              <object class="tk.Label" id="LeftRearRawMotorIndexLabel">
+                                                <property name="text" translatable="yes">Left Rear</property>
+                                                <layout>
+                                                  <property name="column">0</property>
+                                                  <property name="padx">5</property>
+                                                  <property name="pady">5</property>
+                                                  <property name="propagate">True</property>
+                                                  <property name="row">2</property>
+                                                </layout>
+                                              </object>
+                                            </child>
+                                            <child>
+                                              <object class="tk.Label" id="LeftRearRawMotorDirectionLabel">
+                                                <property name="text" translatable="yes">direction</property>
+                                                <property name="textvariable">string:LeftRearRawMotorDirectionInput</property>
+                                                <layout>
+                                                  <property name="column">1</property>
+                                                  <property name="padx">5</property>
+                                                  <property name="pady">5</property>
+                                                  <property name="propagate">True</property>
+                                                  <property name="row">2</property>
+                                                </layout>
+                                              </object>
+                                            </child>
+                                            <child>
+                                              <object class="tk.Label" id="LeftRearRawMotorIntensityLabel">
+                                                <property name="text" translatable="yes">intensity</property>
+                                                <property name="textvariable">string:LeftRearRawMotorIntensityInput</property>
+                                                <layout>
+                                                  <property name="column">2</property>
+                                                  <property name="padx">5</property>
+                                                  <property name="pady">5</property>
+                                                  <property name="propagate">True</property>
+                                                  <property name="row">2</property>
+                                                </layout>
+                                              </object>
+                                            </child>
+                                            <child>
+                                              <object class="tk.Label" id="RightFrontRawMotorIndexLabel">
+                                                <property name="text" translatable="yes">Right Front</property>
+                                                <layout>
+                                                  <property name="column">0</property>
+                                                  <property name="propagate">True</property>
+                                                  <property name="row">3</property>
+                                                </layout>
+                                              </object>
+                                            </child>
+                                            <child>
+                                              <object class="tk.Label" id="RightFrontRawMotorDirectionLabel">
+                                                <property name="text" translatable="yes">direction</property>
+                                                <property name="textvariable">string:RightFrontRawMotorDirectionInput</property>
+                                                <layout>
+                                                  <property name="column">1</property>
+                                                  <property name="padx">5</property>
+                                                  <property name="pady">5</property>
+                                                  <property name="propagate">True</property>
+                                                  <property name="row">3</property>
+                                                </layout>
+                                              </object>
+                                            </child>
+                                            <child>
+                                              <object class="tk.Label" id="RightFrontRawMotorIntensityLabel">
+                                                <property name="text" translatable="yes">intensity</property>
+                                                <property name="textvariable">string:RightFrontRawMotorIntensityInput</property>
+                                                <layout>
+                                                  <property name="column">2</property>
+                                                  <property name="padx">5</property>
+                                                  <property name="pady">5</property>
+                                                  <property name="propagate">True</property>
+                                                  <property name="row">3</property>
+                                                </layout>
+                                              </object>
+                                            </child>
+                                            <child>
+                                              <object class="tk.Label" id="RightRearRawMotorIndexLabel">
+                                                <property name="text" translatable="yes">Right Rear</property>
+                                                <layout>
+                                                  <property name="column">0</property>
+                                                  <property name="padx">5</property>
+                                                  <property name="pady">5</property>
+                                                  <property name="propagate">True</property>
+                                                  <property name="row">4</property>
+                                                </layout>
+                                              </object>
+                                            </child>
+                                            <child>
+                                              <object class="tk.Label" id="RightRearRawMotorDirectionLabel">
+                                                <property name="text" translatable="yes">direction</property>
+                                                <property name="textvariable">string:RightRearRawMotorDirectionInput</property>
+                                                <layout>
+                                                  <property name="column">1</property>
+                                                  <property name="padx">5</property>
+                                                  <property name="pady">5</property>
+                                                  <property name="propagate">True</property>
+                                                  <property name="row">4</property>
+                                                </layout>
+                                              </object>
+                                            </child>
+                                            <child>
+                                              <object class="tk.Label" id="RightRearRawMotorIntensityLabel">
+                                                <property name="text" translatable="yes">intensity</property>
+                                                <property name="textvariable">string:RightRearRawMotorIntensityInput</property>
+                                                <layout>
+                                                  <property name="column">2</property>
+                                                  <property name="padx">5</property>
+                                                  <property name="pady">5</property>
+                                                  <property name="propagate">True</property>
+                                                  <property name="row">4</property>
+                                                </layout>
+                                              </object>
+                                            </child>
+                                          </object>
+                                        </child>
+                                      </object>
+                                    </child>
+                                  </object>
+                                </child>
+                                <child>
+                                  <object class="ttk.Notebook.Tab" id="I2CRawTachosTab">
+                                    <property name="text" translatable="yes">Raw Tachos</property>
+                                    <child>
+                                      <object class="tk.Frame" id="ValuesRawTachoMotorsFrame">
+                                        <property name="height">200</property>
+                                        <property name="width">260</property>
+                                        <layout>
+                                          <property name="column">0</property>
+                                          <property name="pady">5</property>
+                                          <property name="propagate">True</property>
+                                          <property name="row">3</property>
+                                          <property name="sticky">nsew</property>
+                                        </layout>
+                                        <child>
+                                          <object class="tk.Label" id="RawTachoMotorIndexLabel">
+                                            <property name="text" translatable="yes">Motor</property>
+                                            <layout>
+                                              <property name="column">0</property>
+                                              <property name="propagate">True</property>
+                                              <property name="row">0</property>
+                                            </layout>
+                                          </object>
+                                        </child>
+                                        <child>
+                                          <object class="tk.Label" id="RawTachoMotorLastPeriod">
+                                            <property name="text" translatable="yes">Last Period</property>
+                                            <layout>
+                                              <property name="column">0</property>
+                                              <property name="propagate">True</property>
+                                              <property name="row">1</property>
+                                            </layout>
+                                          </object>
+                                        </child>
+                                        <child>
+                                          <object class="tk.Label" id="RawTachoMotorCountLabel">
+                                            <property name="text" translatable="yes">Count</property>
+                                            <layout>
+                                              <property name="column">0</property>
+                                              <property name="propagate">True</property>
+                                              <property name="row">3</property>
+                                            </layout>
+                                          </object>
+                                        </child>
+                                        <child>
+                                          <object class="tk.Label" id="LeftFrontRawTachoMotorIndexLabel">
+                                            <property name="text" translatable="yes">Left Front</property>
+                                            <layout>
+                                              <property name="column">1</property>
+                                              <property name="padx">5</property>
+                                              <property name="pady">5</property>
+                                              <property name="propagate">True</property>
+                                              <property name="row">0</property>
+                                            </layout>
+                                          </object>
+                                        </child>
+                                        <child>
+                                          <object class="tk.Label" id="LeftFrontRawTachoMotorCalibPeriodLabel">
+                                            <property name="text" translatable="yes">calib period</property>
+                                            <property name="textvariable">string:LeftFrontTachoMotorCalibPeriodInput</property>
+                                            <layout>
+                                              <property name="column">1</property>
+                                              <property name="padx">5</property>
+                                              <property name="pady">5</property>
+                                              <property name="propagate">True</property>
+                                              <property name="row">1</property>
+                                            </layout>
+                                          </object>
+                                        </child>
+                                        <child>
+                                          <object class="tk.Label" id="LeftFrontTachoMotorCountLabel_40">
+                                            <property name="text" translatable="yes">count</property>
+                                            <property name="textvariable">string:LeftFrontTachoMotorCountInput</property>
+                                            <layout>
+                                              <property name="column">1</property>
+                                              <property name="padx">5</property>
+                                              <property name="pady">5</property>
+                                              <property name="propagate">True</property>
+                                              <property name="row">3</property>
+                                            </layout>
+                                          </object>
+                                        </child>
+                                        <child>
+                                          <object class="tk.Label" id="LeftRearTachoMotorIndexLabel_43">
+                                            <property name="text" translatable="yes">Left Rear</property>
+                                            <layout>
+                                              <property name="column">2</property>
+                                              <property name="padx">5</property>
+                                              <property name="pady">5</property>
+                                              <property name="propagate">True</property>
+                                              <property name="row">0</property>
+                                            </layout>
+                                          </object>
+                                        </child>
+                                        <child>
+                                          <object class="tk.Label" id="LeftRearTachoMotorCalibPeriodLabel_44">
+                                            <property name="text" translatable="yes">calib period</property>
+                                            <property name="textvariable">string:LeftRearTachoMotorCalibPeriodInput</property>
+                                            <layout>
+                                              <property name="column">2</property>
+                                              <property name="padx">5</property>
+                                              <property name="pady">5</property>
+                                              <property name="propagate">True</property>
+                                              <property name="row">1</property>
+                                            </layout>
+                                          </object>
+                                        </child>
+                                        <child>
+                                          <object class="tk.Label" id="LeftRearTachoMotorCountLabel_46">
+                                            <property name="text" translatable="yes">count</property>
+                                            <property name="textvariable">string:LeftRearTachoMotorCountInput</property>
+                                            <layout>
+                                              <property name="column">2</property>
+                                              <property name="padx">5</property>
+                                              <property name="pady">5</property>
+                                              <property name="propagate">True</property>
+                                              <property name="row">3</property>
+                                            </layout>
+                                          </object>
+                                        </child>
+                                        <child>
+                                          <object class="tk.Label" id="RightFrontTachoMotorIndexLabel_49">
+                                            <property name="text" translatable="yes">Right Front</property>
+                                            <layout>
+                                              <property name="column">3</property>
+                                              <property name="propagate">True</property>
+                                              <property name="row">0</property>
+                                            </layout>
+                                          </object>
+                                        </child>
+                                        <child>
+                                          <object class="tk.Label" id="RightFrontTachoMotorCalibPeriodLabel_50">
+                                            <property name="text" translatable="yes">calib period</property>
+                                            <property name="textvariable">string:RightFrontTachoMotorCalibPeriodInput</property>
+                                            <layout>
+                                              <property name="column">3</property>
+                                              <property name="padx">5</property>
+                                              <property name="pady">5</property>
+                                              <property name="propagate">True</property>
+                                              <property name="row">1</property>
+                                            </layout>
+                                          </object>
+                                        </child>
+                                        <child>
+                                          <object class="tk.Label" id="RightFrontTachoMotorCountLabel_52">
+                                            <property name="text" translatable="yes">count</property>
+                                            <property name="textvariable">string:RightFrontTachoMotorCountInput</property>
+                                            <layout>
+                                              <property name="column">3</property>
+                                              <property name="padx">5</property>
+                                              <property name="pady">5</property>
+                                              <property name="propagate">True</property>
+                                              <property name="row">3</property>
+                                            </layout>
+                                          </object>
+                                        </child>
+                                        <child>
+                                          <object class="tk.Label" id="RightRearTachoMotorIndexLabel_55">
+                                            <property name="text" translatable="yes">Right Rear</property>
+                                            <layout>
+                                              <property name="column">4</property>
+                                              <property name="padx">5</property>
+                                              <property name="pady">5</property>
+                                              <property name="propagate">True</property>
+                                              <property name="row">0</property>
+                                            </layout>
+                                          </object>
+                                        </child>
+                                        <child>
+                                          <object class="tk.Label" id="RightRearTachoMotorCalibPeriodLabel_56">
+                                            <property name="text" translatable="yes">calib period</property>
+                                            <property name="textvariable">string:RightRearTachoMotorCalibPeriodInput</property>
+                                            <layout>
+                                              <property name="column">4</property>
+                                              <property name="padx">5</property>
+                                              <property name="pady">5</property>
+                                              <property name="propagate">True</property>
+                                              <property name="row">1</property>
+                                            </layout>
+                                          </object>
+                                        </child>
+                                        <child>
+                                          <object class="tk.Label" id="RightRearTachoMotorCountLabel_58">
+                                            <property name="text" translatable="yes">count</property>
+                                            <property name="textvariable">string:RightRearTachoMotorCountInput</property>
+                                            <layout>
+                                              <property name="column">4</property>
+                                              <property name="padx">5</property>
+                                              <property name="pady">5</property>
+                                              <property name="propagate">True</property>
+                                              <property name="row">3</property>
+                                            </layout>
+                                          </object>
+                                        </child>
+                                      </object>
+                                    </child>
+                                  </object>
+                                </child>
+                              </object>
+                            </child>
+                            <child>
+                              <object class="ttk.Frame" id="I2CMotorsAddressFrame">
+                                <property name="height">30</property>
+                                <property name="width">22</property>
+                                <layout>
+                                  <property name="column">0</property>
+                                  <property name="columnspan">10</property>
+                                  <property name="padx">5</property>
+                                  <property name="pady">5</property>
+                                  <property name="propagate">True</property>
+                                  <property name="row">34</property>
+                                  <property name="rowspan">1</property>
+                                  <property name="sticky">nsew</property>
+                                </layout>
+                                <child>
+                                  <object class="ttk.Label" id="I2CMotorsAddressLabel">
+                                    <property name="text" translatable="yes">I2C Motors Address</property>
+                                    <layout>
+                                      <property name="column">0</property>
+                                      <property name="columnspan">15</property>
+                                      <property name="padx">5</property>
+                                      <property name="pady">5</property>
+                                      <property name="propagate">True</property>
+                                      <property name="row">0</property>
+                                      <property name="rowspan">1</property>
+                                      <property name="sticky">nsew</property>
+                                    </layout>
+                                  </object>
+                                </child>
+                                <child>
+                                  <object class="ttk.Entry" id="I2CMotorsAddressEntry">
+                                    <property name="text" translatable="yes">0x10</property>
+                                    <property name="width">25</property>
+                                    <layout>
+                                      <property name="column">15</property>
+                                      <property name="columnspan">5</property>
+                                      <property name="padx">5</property>
+                                      <property name="pady">5</property>
+                                      <property name="propagate">True</property>
+                                      <property name="row">0</property>
+                                      <property name="rowspan">1</property>
+                                      <property name="sticky">nsew</property>
+                                    </layout>
+                                  </object>
+                                </child>
+                              </object>
+                            </child>
+                            <child>
+                              <object class="tk.Frame" id="I2CMotorsCommandFrame">
+                                <property name="height">25</property>
+                                <property name="width">350</property>
+                                <layout>
+                                  <property name="column">0</property>
+                                  <property name="propagate">True</property>
+                                  <property name="row">175</property>
+                                  <property name="sticky">nsew</property>
+                                </layout>
+                                <child>
+                                  <object class="ttk.Button" id="I2CMotorsApplyButton">
+                                    <property name="command">on_I2CMotorsApplyButton_clicked</property>
+                                    <property name="text" translatable="yes">Apply</property>
+                                    <layout>
+                                      <property name="column">0</property>
+                                      <property name="columnspan">1</property>
+                                      <property name="padx">5</property>
+                                      <property name="propagate">True</property>
+                                      <property name="row">0</property>
+                                      <property name="rowspan">1</property>
+                                    </layout>
+                                  </object>
+                                </child>
+                                <child>
+                                  <object class="ttk.Button" id="I2CMotorsAcquireButton">
+                                    <property name="command">on_I2CMotorsAcquireButton_clicked</property>
+                                    <property name="text" translatable="yes">Acquire</property>
+                                    <layout>
+                                      <property name="column">3</property>
+                                      <property name="columnspan">1</property>
+                                      <property name="padx">5</property>
+                                      <property name="propagate">True</property>
+                                      <property name="row">0</property>
+                                      <property name="rowspan">1</property>
+                                    </layout>
+                                  </object>
+                                </child>
+                                <child>
+                                  <object class="ttk.Button" id="I2CMotorsHaltButton">
+                                    <property name="command">on_I2CMotorsHaltButton_clicked</property>
+                                    <property name="text" translatable="yes">Halt</property>
+                                    <layout>
+                                      <property name="column">5</property>
+                                      <property name="columnspan">1</property>
+                                      <property name="padx">5</property>
+                                      <property name="propagate">True</property>
+                                      <property name="row">0</property>
+                                      <property name="rowspan">1</property>
+                                      <property name="sticky">e</property>
+                                    </layout>
+                                  </object>
+                                </child>
+                              </object>
+                            </child>
+                          </object>
+                        </child>
+                      </object>
+                    </child>
+                    <child>
+                      <object class="ttk.Notebook.Tab" id="UltraSoundTab">
+                        <property name="text" translatable="yes">UltraSound</property>
+                        <child>
+                          <object class="ttk.Frame" id="UltraSoundFrame">
+                            <property name="height">200</property>
+                            <property name="width">200</property>
+                            <layout>
+                              <property name="column">0</property>
+                              <property name="propagate">True</property>
+                              <property name="row">0</property>
+                            </layout>
+                          </object>
+                        </child>
+                      </object>
+                    </child>
+                    <child>
+                      <object class="ttk.Notebook.Tab" id="I2CRawTab">
+                        <property name="sticky">nsew</property>
+                        <property name="text" translatable="yes">Raw</property>
+                        <child>
+                          <object class="tk.Frame" id="RawFrame">
+                            <property name="height">340</property>
+                            <property name="width">100</property>
+                            <layout>
+                              <property name="column">0</property>
+                              <property name="columnspan">150</property>
+                              <property name="propagate">True</property>
+                              <property name="row">0</property>
+                              <property name="rowspan">50</property>
+                              <property name="sticky">nsew</property>
+                              <rows>
+                                <row id="0">
+                                  <property name="pad">0</property>
+                                  <property name="weight">0</property>
+                                </row>
+                              </rows>
+                            </layout>
+                            <child>
+                              <object class="tk.Listbox" id="I2CRawCommandsHistoryListbox">
+                                <property name="height">31</property>
+                                <property name="listvariable">string:selection</property>
+                                <bind add="True" handler="on_I2CRawCommandHistory_clicked" sequence="&lt;&lt;ListboxSelect&gt;&gt;" />
+                                <layout>
+                                  <property name="column">0</property>
+                                  <property name="columnspan">100</property>
+                                  <property name="propagate">True</property>
+                                  <property name="row">0</property>
+                                  <property name="rowspan">14</property>
+                                  <property name="sticky">nsew</property>
+                                </layout>
+                              </object>
+                            </child>
+                            <child>
+                              <object class="ttk.Frame" id="I2CRawAddressFrame">
+                                <property name="height">30</property>
+                                <property name="width">100</property>
+                                <layout>
+                                  <property name="column">0</property>
+                                  <property name="columnspan">130</property>
+                                  <property name="propagate">True</property>
+                                  <property name="row">75</property>
+                                  <property name="rowspan">1</property>
+                                  <property name="sticky">nsew</property>
+                                </layout>
+                                <child>
+                                  <object class="ttk.Label" id="I2CRawAddressLabel">
+                                    <property name="text" translatable="yes">I2C Address</property>
+                                    <layout>
+                                      <property name="column">0</property>
+                                      <property name="columnspan">15</property>
+                                      <property name="padx">5</property>
+                                      <property name="pady">5</property>
+                                      <property name="propagate">True</property>
+                                      <property name="row">0</property>
+                                      <property name="rowspan">1</property>
+                                      <property name="sticky">nsew</property>
+                                    </layout>
+                                  </object>
+                                </child>
+                                <child>
+                                  <object class="ttk.Entry" id="I2CRawAddressEntry">
+                                    <property name="text" translatable="yes">0x10</property>
+                                    <property name="width">30</property>
+                                    <layout>
+                                      <property name="column">21</property>
+                                      <property name="columnspan">50</property>
+                                      <property name="padx">5</property>
+                                      <property name="pady">5</property>
+                                      <property name="propagate">True</property>
+                                      <property name="row">0</property>
+                                      <property name="rowspan">1</property>
+                                      <property name="sticky">nsew</property>
+                                    </layout>
+                                  </object>
+                                </child>
+                              </object>
+                            </child>
+                            <child>
+                              <object class="tk.Frame" id="I2CRawCommandFrame">
+                                <property name="height">25</property>
+                                <property name="width">350</property>
+                                <layout>
+                                  <property name="column">0</property>
+                                  <property name="propagate">True</property>
+                                  <property name="row">76</property>
+                                  <property name="sticky">nsew</property>
+                                </layout>
+                                <child>
+                                  <object class="ttk.Entry" id="I2CRawCommandEntry">
+                                    <property name="text" translatable="yes">[   ]</property>
+                                    <property name="width">42</property>
+                                    <layout>
+                                      <property name="column">0</property>
+                                      <property name="columnspan">10</property>
+                                      <property name="padx">5</property>
+                                      <property name="propagate">True</property>
+                                      <property name="row">0</property>
+                                      <property name="rowspan">1</property>
+                                      <property name="sticky">nsew</property>
+                                    </layout>
+                                  </object>
+                                </child>
+                                <child>
+                                  <object class="ttk.Button" id="I2CRawCommandTransmitButton">
+                                    <property name="command">on_I2CRawCommandTransmitButton_clicked</property>
+                                    <property name="text" translatable="yes">Transmit</property>
+                                    <layout>
+                                      <property name="column">0</property>
+                                      <property name="propagate">True</property>
+                                      <property name="row">1</property>
+                                    </layout>
+                                  </object>
+                                </child>
+                                <child>
+                                  <object class="ttk.Button" id="I2CRawCommandResetButton">
+                                    <property name="command">on_I2CRawCommandResetButton_clicked</property>
+                                    <property name="text" translatable="yes">Reset</property>
+                                    <layout>
+                                      <property name="column">1</property>
+                                      <property name="columnspan">1</property>
+                                      <property name="padx">5</property>
+                                      <property name="propagate">True</property>
+                                      <property name="row">1</property>
+                                      <property name="rowspan">1</property>
+                                    </layout>
+                                  </object>
+                                </child>
+                              </object>
+                            </child>
+                          </object>
+                        </child>
+                      </object>
+                    </child>
+                  </object>
+                </child>
+              </object>
+            </child>
+            <child>
+              <object class="ttk.Frame" id="I2CLogsFrame">
+                <property name="height">500</property>
+                <property name="width">200</property>
+                <layout>
+                  <property name="column">130</property>
+                  <property name="columnspan">110</property>
+                  <property name="propagate">True</property>
+                  <property name="row">0</property>
+                  <property name="rowspan">60</property>
+                  <property name="sticky">nsew</property>
+                </layout>
+                <child>
+                  <object class="tk.Text" id="I2CLogText">
+                    <property name="font">TkTextFont</property>
+                    <property name="height">40</property>
+                    <property name="maxundo">1</property>
+                    <property name="state">disabled</property>
+                    <property name="width">51</property>
+                    <layout>
+                      <property name="column">0</property>
+                      <property name="columnspan">30</property>
+                      <property name="propagate">True</property>
+                      <property name="row">0</property>
+                      <property name="rowspan">60</property>
+                      <property name="sticky">nsew</property>
+                    </layout>
+                  </object>
+                </child>
+                <child>
+                  <object class="ttk.Button" id="I2CClearLogButton">
+                    <property name="text" translatable="yes">Clear Logs</property>
+                    <layout>
+                      <property name="column">16</property>
+                      <property name="ipadx">10</property>
+                      <property name="padx">10</property>
+                      <property name="pady">10</property>
+                      <property name="propagate">True</property>
+                      <property name="row">63</property>
+                    </layout>
+                  </object>
+                </child>
+              </object>
+            </child>
+          </object>
+        </child>
+        <child>
+          <object class="ttk.Button" id="ExitButton">
+            <property name="command">on_ExitButton_clicked</property>
+            <property name="text" translatable="yes">Exit</property>
+            <layout>
+              <property name="column">30</property>
+              <property name="propagate">True</property>
+              <property name="row">70</property>
+            </layout>
+          </object>
+        </child>
+      </object>
+    </child>
+  </object>
+</interface>
