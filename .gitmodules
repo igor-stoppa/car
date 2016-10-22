@@ -1,0 +1,4 @@
+[submodule "src/ChibiOS"]
+	path = src/ChibiOS
+	url = https://github.com/igor-stoppa/ChibiOS.git
+	branch = drivers
